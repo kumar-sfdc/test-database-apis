@@ -21,9 +21,11 @@ public class CassandraHelper {
 
             // Create table if not exits
             session.execute(CassandraTestUtils.readCQLDumpFile("tables/orgtimelinepage.cql").get(0));
+            session.execute(CassandraTestUtils.readCQLDumpFile("tables/scoped_data_policy.cql").get(0));
 
             // Insert sample data
             insertDataIntoOrgTimeLinePage("data/emails.cql");
+            insertDataIntoOrgTimeLinePage("data/ecivideospolicy.cql");
         }
     }
 
